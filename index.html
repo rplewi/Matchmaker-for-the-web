@@ -1,8 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matchmaker!</title>
+    <script src="Matchmaker.js"></script>
+</head>
 <Body>
     <div id="content">
-        <h1>AAAAAAAAAAAAA</h1>
+        <h1>Matchmaker</h1>
+        <p1>Instructions:</p1>
+
+        <label>Question 1 (change later)</label><br>
+        <Select id="Question-1">
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Disagree</option>
+            <option value="3">Meh</option>
+            <option value="4">Agree</option>
+            <option value="5">Strongly Agree</option>
+        </Select>
+    <br><br>
+        <label>Question 2 (change later) </label><br>
+        <select id="Question-2">
+            <option value="1">Strongly Disagree</option>
+            <option value="2">Disagree</option>
+            <option value="3">Meh</option>
+            <option value="4">Agree</option>
+            <option value="5">Strongly Agree</option>
+        </select>
+    <br> <br><br>
+        <button onclick="compatibilityCalculator()">Calculate</button>
+        <p id="finalNumber"></p>
+            
     </div>
 </Body>
 </html>
