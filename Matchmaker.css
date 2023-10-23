@@ -4,3 +4,8 @@ label, h1, p{
 body{
     Background-color: #36454F;
 }
+
+#calculateButton{
+ width: 8.5rem;   
+}
+
