@@ -39,7 +39,7 @@ console.log("Matchmaker Starting...");
 
  function calculateQ3(){
     const questionThree = document.getElementById("Question-3").selectedOptions[0].value
-    let question3Compatibility = QUESTION_3_WEIGHT * (Math.abs(QUESTION_3_ANSWER - questionThree))
+    let question3Compatibility = QUESTION_3_WEIGHT * Math.abs(QUESTION_3_ANSWER - questionThree)
     final = final - question3Compatibility
     PointsQ3 = question3Compatibility.toString();
     console.log(question3Compatibility)
@@ -82,11 +82,11 @@ function compatibilityCalculator(){
     const SelectedText5 = document.getElementById("Question-5").selectedOptions[0].text;
 
     document.getElementById('result_text').innerHTML = "Your Results: " + final + "%"
-    document.getElementById('Q1Response').innerHTML = ("Your Answer: " + SelectedText1 + ", gave you " + (PointsQ1 * QUESTION_1_WEIGHT) + " points")
-    document.getElementById('Q2Response').innerHTML = ("Your Answer: " + SelectedText2 + ", gave you " + (PointsQ2 * QUESTION_2_WEIGHT) + " points");
-    document.getElementById('Q3Response').innerHTML = ("Your Answer: " + SelectedText3 + ", gave you " + (PointsQ3 * QUESTION_3_WEIGHT) + " points");
-    document.getElementById('Q4Response').innerHTML = ("Your Answer: " + SelectedText4 + ", gave you " + (PointsQ4 * QUESTION_4_WEIGHT) + " points");
-    document.getElementById('Q5Response').innerHTML = ("Your Answer: " + SelectedText5 + ", gave you " + (PointsQ5 * QUESTION_5_WEIGHT) + " points");
+    document.getElementById('Q1Response').innerHTML = ("Your Answer: " + SelectedText1 + ", gave you " + (PointsQ1) + " points")
+    document.getElementById('Q2Response').innerHTML = ("Your Answer: " + SelectedText2 + ", gave you " + (PointsQ2) + " points");
+    document.getElementById('Q3Response').innerHTML = ("Your Answer: " + SelectedText3 + ", gave you " + (PointsQ3) + " points");
+    document.getElementById('Q4Response').innerHTML = ("Your Answer: " + SelectedText4 + ", gave you " + (PointsQ4) + " points");
+    document.getElementById('Q5Response').innerHTML = ("Your Answer: " + SelectedText5 + ", gave you " + (PointsQ5) + " points");
 // Loop used to see what response you should get based on your percentage
     if (final < 50 ){
         document.getElementById("resultReaction").innerHTML = "Dude No" 
