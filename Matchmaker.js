@@ -17,7 +17,22 @@ console.log("Matchmaker Starting...");
 
     let final = 100
 
-    
+function displayText(){
+    document.getElementById('result_text').innerHTML = "Your Results: " + final + "%"
+    document.getElementById('Q1Response').innerHTML = ("Your Answer: " + SelectedText1 + ", took " + (PointsQ1) + " points off")
+    document.getElementById('Q2Response').innerHTML = ("Your Answer: " + SelectedText2 + ", took " + (PointsQ2) + " points off");
+    document.getElementById('Q3Response').innerHTML = ("Your Answer: " + SelectedText3 + ", took " + (PointsQ3) + " points off");
+    document.getElementById('Q4Response').innerHTML = ("Your Answer: " + SelectedText4 + ", took " + (PointsQ4) + " points off");
+    document.getElementById('Q5Response').innerHTML = ("Your Answer: " + SelectedText5 + ", took " + (PointsQ5) + " points off");
+// Loop used to see what response you should get based on your percentage
+    if (final < 80 > 70 ){
+        document.getElementById("resultReaction").innerHTML = "Sorry I don't think this is going to work" 
+    } else if (final < 70){
+        document.getElementById("resultReaction").innerHTML = "Ew, no thanks"
+    } else {
+        document.getElementById("resultReaction").innerHTML = "We should definitely go on a date"
+    }
+}
 
  //Calculates Scores from Values per question
  function calculateQ1(){
@@ -26,6 +41,7 @@ console.log("Matchmaker Starting...");
     final = final - question1Compatibility
     PointsQ1 = question1Compatibility.toString();
     console.log(question1Compatibility)
+    
  }
 
  function calculateQ2(){
@@ -68,33 +84,53 @@ console.log("Matchmaker Starting...");
 function compatibilityCalculator(){
     calculateQ1()
     const SelectedText1 = document.getElementById("Question-1").selectedOptions[0].text;
+    var dropdown1 = document.getElementById("Question-1");
 
     calculateQ2()
     const SelectedText2 = document.getElementById("Question-2").selectedOptions[0].text;
+    var dropdown2 = document.getElementById("Question-1");
+
 
     calculateQ3()
     const SelectedText3 = document.getElementById("Question-3").selectedOptions[0].text;
+    var dropdown3 = document.getElementById("Question-1");
+
 
     calculateQ4()
     const SelectedText4 = document.getElementById("Question-4").selectedOptions[0].text;
+    var dropdown4 = document.getElementById("Question-1");
+
 
     calculateQ5()
     const SelectedText5 = document.getElementById("Question-5").selectedOptions[0].text;
+    var dropdown5 = document.getElementById("Question-1");
 
+
+    if (dropdown1,dropdown2,dropdown3,dropdown4,dropdown5.value =="0"){
+        alert("Please select an actual option")
+    } else{
     document.getElementById('result_text').innerHTML = "Your Results: " + final + "%"
-    document.getElementById('Q1Response').innerHTML = ("Your Answer: " + SelectedText1 + ", gave you " + (PointsQ1) + " points")
-    document.getElementById('Q2Response').innerHTML = ("Your Answer: " + SelectedText2 + ", gave you " + (PointsQ2) + " points");
-    document.getElementById('Q3Response').innerHTML = ("Your Answer: " + SelectedText3 + ", gave you " + (PointsQ3) + " points");
-    document.getElementById('Q4Response').innerHTML = ("Your Answer: " + SelectedText4 + ", gave you " + (PointsQ4) + " points");
-    document.getElementById('Q5Response').innerHTML = ("Your Answer: " + SelectedText5 + ", gave you " + (PointsQ5) + " points");
+    document.getElementById('Q1Response').innerHTML = ("Your Answer: " + SelectedText1 + ", with a weight of " + QUESTION_1_WEIGHT + ", took " + (PointsQ1) + " points off");
+    document.getElementById('Q2Response').innerHTML = ("Your Answer: " + SelectedText2 + ", with a weight of " + QUESTION_2_WEIGHT + ", took " + (PointsQ2) + " points off");
+    document.getElementById('Q3Response').innerHTML = ("Your Answer: " + SelectedText3 + ", with a weight of " + QUESTION_3_WEIGHT + ", took " + (PointsQ3) + " points off");
+    document.getElementById('Q4Response').innerHTML = ("Your Answer: " + SelectedText4 + ", with a weight of " + QUESTION_4_WEIGHT + ", took " + (PointsQ4) + " points off");
+    document.getElementById('Q5Response').innerHTML = ("Your Answer: " + SelectedText5 + ", with a weight of " + QUESTION_5_WEIGHT + ", took " + (PointsQ5) + " points off");
 // Loop used to see what response you should get based on your percentage
-    if (final < 50 ){
-        document.getElementById("resultReaction").innerHTML = "Dude No" 
+    if (final < 80 > 70 ){
+        document.getElementById("resultReaction").innerHTML = "Sorry I don't think this is going to work" 
     } else if (final < 70){
-        document.getElementById("resultReaction").innerHTML = "Bruh"
+        document.getElementById("resultReaction").innerHTML = "Ew, no thanks"
     } else {
-        document.getElementById("resultReaction").innerHTML = "Dude lets hang out"
+        document.getElementById("resultReaction").innerHTML = "We should definitely go on a date"
     }
+}
+document.getElementById("calculateButton").disabled = true;
+document.getElementById("Question-1").disabled = true;
+document.getElementById("Question-2").disabled = true;
+document.getElementById("Question-3").disabled = true;
+document.getElementById("Question-4").disabled = true;
+document.getElementById("Question-5").disabled = true;
+
 }
 
 
